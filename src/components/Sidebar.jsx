@@ -6,15 +6,18 @@ const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
 
     return (
         <div>
-            <aside className={`overflow-hidden transition-all duration-500 ${expanded ? 'h-screen flex flex-col w-[75%] border-r-1' : 'h-screen flex flex-col w-[25%] border-r-1'}`}>
-                <div className={`overflow-hidden transition-all duration-500 ${expanded ? 'flex justify-center items-center gap-17 px-4 py-3 w-full' : "flex flex-start justify-between px-4 py-3 w-auto"}`}>
+            <aside className={`overflow-hidden transition-all duration-500 ${expanded ? 'h-screen flex flex-col w-full border-r-1' : 'h-screen flex flex-col w-[40%] border-r-1'}`}>
+                <div className={`overflow-hidden transition-all duration-500 ${expanded ? 'flex items-center gap-9 px-3 py-4 w-full' : "flex flex-start justify-between px-3 py-4 w-auto"}`}>
                     <div className='flex items-center'>
-                        <img src={assets.codLogo1} alt='COD Logo' className={`overflow-hidden transition-all duration-500 ${expanded ? "w-10" : "w-0"} duration-500`} />
+                        <img src={assets.codLogo1} alt='COD Logo' className={`overflow-hidden transition-all duration-500 ${expanded ? "w-7" : "w-0"} duration-500`} />
                         <p className={`overflow-hidden transition-all duration-500 ${expanded ? "text-sm font-[350]" : "hidden" }  duration-500`}>CODONNIE</p>
                     </div>
                     <div className='flex justify-between items-center gap-5 duration-500'>
                         {expanded ? <FoldHorizontal onClick={() => setExpanded(!expanded)} /> : <UnfoldHorizontal onClick={() => setExpanded(!expanded)} />}
-                        <X onClick={() => setAside(!aside)} />
+                        <X onClick={() => {
+                            setAside(!aside);
+                            
+                        }} />
                     </div>
                 </div>
 
