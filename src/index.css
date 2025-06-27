@@ -45,3 +45,6 @@
     background: hsl(var(--accent-color));
     clip-path: path("M 10,50 L 90,50 A 10,10 0,0,0 100,40 L 100,10 L 110,0 L 190,0 L 200,10 L 200,190 L 190,200 L 10,200 L 0,190 L 0,60 Z")
 }
+@utility shade {
+    box-shadow: -4px 0 10px hsl(var(--accent-color), 0.5);
+}

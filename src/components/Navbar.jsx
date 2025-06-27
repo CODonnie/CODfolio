@@ -23,12 +23,12 @@ const Navbar = () => {
         <>
             {/* side nav */}
             <aside className={`fixed bg-[hsl(var(--background))] top-0 left-0 h-full z-50 transition-all duration-300 ease-in-out
-  ${aside ? 'w-[65%]' : 'w-0'} overflow-hidden`}>
+  ${aside ? 'w-[65%]' : 'w-0'} ${expanded ? 'shadow-[-6px_0_12px_rgba(173,255,226,0.5)]' : 'shadow-[-6px_0_12px_rgba(173,255,226,0)]' } overflow-hidden`}>
                 <Sidebar aside={aside} setAside={setAside} expanded={expanded} setExpanded={setExpanded}>{
                     nav.map((links) => {
                         return (
                             <a href={links.path} key={links.path}>
-                                <SidebarItem expanded={expanded} name={links.name} icon={links.icon} />
+                                <SidebarItem expanded={expanded} aside={aside} setAside={setAside} name={links.name} icon={links.icon} />
                             </a>
                         )
                     }
