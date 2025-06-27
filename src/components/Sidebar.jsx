@@ -1,20 +1,19 @@
-import { useState } from 'react';
 import { assets } from '../assets/assets';
-import { ArrowLeftToLine, X } from 'lucide-react';
+import { UnfoldHorizontal, FoldHorizontal, X } from 'lucide-react';
 
 const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
 
 
     return (
         <div>
-            <aside className='h-screen flex flex-col w-[75%] border-r-1'>
-                <div className='flex justify-center items-center gap-10 px-4 py-3 w-full'>
+            <aside className={`overflow-hidden transition-all duration-500 ${expanded ? 'h-screen flex flex-col w-[75%] border-r-1' : 'h-screen flex flex-col w-[25%] border-r-1'}`}>
+                <div className={`overflow-hidden transition-all duration-500 ${expanded ? 'flex justify-center items-center gap-17 px-4 py-3 w-full' : "flex flex-start justify-between px-4 py-3 w-auto"}`}>
                     <div className='flex items-center'>
-                        <img src={assets.codLogo1} alt='COD Logo' className='w-10 h-10 sm:w-18 sm:h-18' />
-                        <p className='text-sm font-[350]'>CODONNIE</p>
+                        <img src={assets.codLogo1} alt='COD Logo' className={`overflow-hidden transition-all duration-500 ${expanded ? "w-10" : "w-0"} duration-500`} />
+                        <p className={`overflow-hidden transition-all duration-500 ${expanded ? "text-sm font-[350]" : "hidden" }  duration-500`}>CODONNIE</p>
                     </div>
-                    <div className='flex justify-between items-center gap-10'>
-                        <ArrowLeftToLine onClick={() => setExpanded(!expanded)} />
+                    <div className='flex justify-between items-center gap-5 duration-500'>
+                        {expanded ? <FoldHorizontal onClick={() => setExpanded(!expanded)} /> : <UnfoldHorizontal onClick={() => setExpanded(!expanded)} />}
                         <X onClick={() => setAside(!aside)} />
                     </div>
                 </div>
@@ -29,7 +28,7 @@ const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
                 {/* connect btn */}
                 <div className='flex justify-start items-center gap-10 px-4 py-3 w-full mt-auto'>
                     <img src={assets.codround} alt='COD Logo' className='w-8' />
-                    <button className='rounded border-1 border-[hsl(var(--foregroundr))] px-4 py-1 cursor-pointer hover:bg-[hsl(var(--foreground))] hover:text-[hsl(var(--background))] transition'>Let's Connect</button>
+                    <button className={`overflow-hidden transition-all duration-500 ${expanded ? "rounded border-1 border-[hsl(var(--foreground))] px-4 py-1 cursor-pointer" : "hidden"}`}>Let's Connect</button>
 
                 </div>
             </aside>
