@@ -6,7 +6,7 @@ const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
 
     return (
         <div>
-            <aside className={`overflow-hidden transition-all duration-200 ${expanded ? 'h-screen flex flex-col w-full ' : 'h-screen flex flex-col w-[40%] shadow-[-6px_0_12px_rgba(173,255,226,0.5)]'}`}>
+            <aside className={`overflow-hidden transition-all duration-200 ${expanded ? 'h-screen bg-[hsl(var(--background))] flex flex-col w-full ' : 'h-screen bg-[hsl(var(--background))] flex flex-col w-[40%] shadow-[-6px_0_12px_rgba(173,255,226,0.5)]'}`}>
                 <div className={`overflow-hidden transition-all duration-500 ${expanded ? 'flex items-center gap-9 px-3 py-4 w-full' : "flex flex-start justify-between px-3 py-4 w-auto"}`}>
                     <div className='flex items-center'>
                         <img src={assets.codLogo1} alt='COD Logo' className={`overflow-hidden transition-all duration-500 ${expanded ? "w-7" : "w-0"} duration-500`} />

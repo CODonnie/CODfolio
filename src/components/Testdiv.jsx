@@ -2,7 +2,7 @@ import React from 'react'
 
 const Testdiv = () => {
   return (
-    <div>
+    <div className='flex justify-center items-center h-screen w-full'>
       <div className='gongon'>This is the test div</div>
     </div>
   )
