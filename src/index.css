@@ -30,21 +30,76 @@
     padding: 0;
 }
 
-@utility divgon {
-    width: 200px;
-    height: 200px;
-    background: hsl(var(--accent-color));
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
+@utility shade {
+    @apply shadow-[0px_0_12px_rgba(173,255,226,0.5)]
 }
 
-@utility gongon {
-    width: 200px;
-    height: 200px;
-    background: hsl(var(--accent-color));
-    clip-path: path("M 10,50 L 90,50 A 10,10 0,0,0 100,40 L 100,10 L 110,0 L 190,0 L 200,10 L 200,190 L 190,200 L 10,200 L 0,190 L 0,60 Z")
+@utility mobhero {
+    width: 100%;
+    aspect-ratio: 2/1;
+    overflow: hidden;
+    max-width: 530px;
+    background-image: url("./assets/car.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask-image: url("./assets/hero.svg");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
 }
-@utility shade {
-    box-shadow: -4px 0 10px hsl(var(--accent-color), 0.5);
+@utility mobabout {
+    width: 100%;
+    aspect-ratio: 2.86;
+    overflow: hidden;
+    max-width: 530px;
+    background-image: url("./assets/car.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask-image: url("./assets/about.svg");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+}
+@utility mobskills {
+    width: 100%;
+    aspect-ratio: 7.1;
+    overflow: hidden;
+    max-width: 530px;
+    background-image: url("./assets/car.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask-image: url("./assets/skills.svg");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+}
+@utility mobproject {
+    width: 100%;
+    aspect-ratio: 1.8;
+    overflow: hidden;
+    max-width: 530px;
+    background-image: url("./assets/car.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask-image: url("./assets/project.svg");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+}
+@utility mobexp {
+    width: 100%;
+    aspect-ratio: 2;
+    overflow: hidden;
+    max-width: 530px;
+    background-image: url("./assets/car.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask-image: url("./assets/exp.svg");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
 }

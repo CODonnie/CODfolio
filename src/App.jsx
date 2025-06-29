@@ -1,16 +1,14 @@
-import Hero from './components/Hero'
-import Navbar from './components/Navbar'
-import Testdiv from './components/Testdiv'
+import Body from './components/Main/Body'
+import Navbar from './components/Navigations/Navbar'
 
 const App = () => {
   return (
     <div>
-    {/* Navbar */}
-    <Navbar />
-    {/* Body */}
-    <Hero />
-    {/* Footer */}
-    <Testdiv />
+      {/* Navbar */}
+      <Navbar />
+      {/* Body */}
+      <Body />
+      {/* Footer */}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
-import { assets } from '../assets/assets'
-import { ArrowLeftToLine, Menu, X, House, CircleUser, Wrench, FolderOpenDot, Hourglass, Phone, Unplug } from 'lucide-react'
+import { assets } from '../../assets/assets'
+import { Menu, House, CircleUser, Wrench, FolderOpenDot, Hourglass, Phone, Unplug } from 'lucide-react'
 import { useState } from 'react'
 import Sidebar from './Sidebar'
 import { SidebarItem } from './Sidebar'
@@ -22,8 +22,8 @@ const Navbar = () => {
     return (
         <>
             {/* side nav */}
-            <aside className={`fixed bg-[hsl(var(--background))] top-0 left-0 h-full z-50 transition-all duration-300 ease-in-out
-  ${aside ? 'w-60' : 'w-0'} ${expanded ? 'shadow-[-6px_0_12px_rgba(173,255,226,0.5)]' : 'shadow-[-6px_0_12px_rgba(173,255,226,0)] bg-[rgba(0,0,0,0)]' } overflow-hidden`}>
+            <aside className={`fixed bg-[hsl(var(--background))] top-0 left-0 min-h-screen z-50 transition-all duration-300 ease-in-out
+  ${aside ? 'w-60' : 'w-0'} ${expanded ? 'shadow-[-6px_0_12px_rgba(173,255,226,0.5)]' : 'shadow-[-6px_0_12px_rgba(173,255,226,0)] bg-[rgba(0,0,0,0)]' } overflow-y-auto`}>
                 <Sidebar aside={aside} setAside={setAside} expanded={expanded} setExpanded={setExpanded}>{
                     nav.map((links) => {
                         return (
@@ -63,7 +63,7 @@ const Navbar = () => {
                         })}
                     </nav>
                 </div>
-                <div className='flex items-center sm:block hidden'>
+                <div className='items-center hidden sm:flex'>
                     <button className='rounded border-1 border-[hsl(var(--foregroundr))] px-7 py-1 cursor-pointer hover:bg-[hsl(var(--foreground))] hover:text-[hsl(var(--background))] transition'>Connect with me</button>
                 </div>
             </main>

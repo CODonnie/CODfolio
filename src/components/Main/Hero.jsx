@@ -2,8 +2,8 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <div className='px-25 py-10'>
-           
+        <div className='flex justify-center items-center w-full'>
+            <div className='mobhero'></div>
         </div>
     )
 }
