@@ -39,11 +39,7 @@
     aspect-ratio: 2/1;
     overflow: hidden;
     max-width: 530px;
-    background-image: url("./assets/car.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-mask-image: url("./assets/hero.svg");
+    -webkit-mask-image: url("./assets/hero1.svg");
     -webkit-mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
 }
@@ -52,10 +48,6 @@
     aspect-ratio: 2.86;
     overflow: hidden;
     max-width: 530px;
-    background-image: url("./assets/car.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     -webkit-mask-image: url("./assets/about.svg");
     -webkit-mask-size: 100% 100%;
     -webkit-mask-position: center;
