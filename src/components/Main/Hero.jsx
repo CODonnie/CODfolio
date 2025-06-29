@@ -1,12 +1,26 @@
 import React from 'react'
+import { assets } from '../../assets/assets'
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 const Hero = () => {
+
+    const [text] = useTypewriter({
+        words: ['Web Developer', 'Graphics Designer', 'Product Designer', 'Freelancer'],
+        loop: true,
+        typeSpeed: 100,
+        deleteSpeed: 50,
+    });
+
     return (
         <div className='flex justify-center items-center w-full relative'>
-            {/* fake border */}
-            <div className='mobhero absolute inset-0 z-0 border-mask bg-[hsl(var(--foreground))] scale-[1] translate-x-[0.3%] translate-y-[0.8%]'></div>
-            {/* main div */}
-            <div className="mobhero relative z-10 bg-[hsl(var(--background))]"></div>
+            <div className="mobhero relative z-10 backg grid grid-cols-3 justify-center items-center">
+                <div className='flex flex-col justify-center items-start absolute top-[25%] right-[10%] z-0'>
+                    <p className='text-2xl'>Hi, I'm</p>
+                    <p className='text-5xl font-semibold tracking-tighter leading-none'>DONNIE</p>
+                    <p className='px-1'><span style={{fontWeight: 'normal', color: 'white'}}>{text}<Cursor cursorStyle='|'/></span></p>
+                </div>
+                <img src={assets.dee} alt="" className='w-80 z-20 col-span-2' />
+            </div>
         </div>
     )
 }

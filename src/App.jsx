@@ -3,7 +3,7 @@ import Navbar from './components/Navigations/Navbar'
 
 const App = () => {
   return (
-    <div>
+    <div className='backg'>
       {/* Navbar */}
       <Navbar />
       {/* Body */}

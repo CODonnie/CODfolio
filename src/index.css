@@ -4,7 +4,7 @@
 
 @layer base {
     :root {
-        --background: 206 70% 2%;
+        --background: 120 8% 5%;
         --foreground: 208 0% 89%;
         --accent-color: 163 88% 76%;
     }
@@ -34,12 +34,26 @@
     @apply shadow-[0px_0_12px_rgba(173,255,226,0.5)]
 }
 
+@utility backg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url("./assets/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 @utility mobhero {
     width: 100%;
-    aspect-ratio: 2/1;
+    aspect-ratio: 1.3;
     overflow: hidden;
     max-width: 530px;
-    -webkit-mask-image: url("./assets/hero1.svg");
+    background-image: url("./assets/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask-image: url("./assets/hero.svg");
     -webkit-mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
 }
