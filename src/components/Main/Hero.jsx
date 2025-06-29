@@ -14,7 +14,7 @@ const Hero = () => {
     return (
         <div className='flex justify-center items-center w-full relative'>
             <div className="mobhero relative z-10 backg grid grid-cols-3 justify-center items-center">
-                <div className='flex flex-col justify-center items-start absolute top-[25%] right-[10%] z-0'>
+                <div className='flex flex-col justify-center items-start absolute top-[23%] right-[10%] z-0'>
                     <p className='text-2xl'>Hi, I'm</p>
                     <p className='text-5xl font-semibold tracking-tighter leading-none'>DONNIE</p>
                     <p className='px-1'><span style={{fontWeight: 'normal', color: 'white'}}>{text}<Cursor cursorStyle='|'/></span></p>
