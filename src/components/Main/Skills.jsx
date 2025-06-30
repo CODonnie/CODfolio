@@ -3,38 +3,44 @@ import { assets } from '../../assets/assets'
 
 const Skills = () => {
 
-    const width = "w-7"
+    const logos = [
+        assets.ai,
+        assets.ps,
+        assets.canva,
+        assets.xd,
+        assets.react,
+        assets.redis,
+        assets.expressjs,
+        assets.mongo,
+        assets.postgresql,
+        assets.html,
+        assets.tailwind,
+        assets.css,
+        assets.docker,
+        assets.figma,
+        assets.git,
+        assets.github,
+        assets.graphql,
+        assets.js,
+        assets.ts,
+        assets.jwt,
+        assets.npm,
+        assets.nodejs,
+        assets.sass,
+    ];
+
     return (
-        <div className='flex justify-center items-center w-full'>
-            <div className='flex flex-col gap-2'>
-                <p className='text-xl grid justify-end'>Skills</p>
-                <div className='flex gap-3'>
-                    <img src={assets.ai} alt='' className={width} />
-                    <img src={assets.ps} alt='' className={width} />
-                    <img src={assets.canva} alt='' className={width} />
-                    <img src={assets.xd} alt='' className={width} />
-                    <img src={assets.react} alt='' className={width} />
-                    <img src={assets.redis} alt='' className={width} />
-                    <img src={assets.expressjs} alt='' className={width} />
-                    <img src={assets.mongo} alt='' className={width} />
-                    <img src={assets.postgresql} alt='' className={width} />
-                    <img src={assets.html} alt='' className={width} />
-                    <img src={assets.tailwind} alt='' className={width} />
-                    <img src={assets.css} alt='' className={width} />
-                    <img src={assets.docker} alt='' className={width} />
-                    <img src={assets.figma} alt='' className={width} />
-                    <img src={assets.git} alt='' className={width} />
-                    <img src={assets.github} alt='' className={width} />
-                    <img src={assets.graphql} alt='' className={width} />
-                    <img src={assets.js} alt='' className={width} />
-                    <img src={assets.ts} alt='' className={width} />
-                    <img src={assets.jwt} alt='' className={width} />
-                    <img src={assets.npm} alt='' className={width} />
-                    <img src={assets.nodejs} alt='' className={width} />
-                    <img src={assets.sass} alt='' className={width} />
+        <div className="flex justify-center items-center overflow-hidden">
+            <div className="relative w-[530px] h-[48px]">
+                <div className="absolute flex gap-4 animate-infinite-scroll">
+                    {/* Duplicate logos for seamless looping */}
+                    {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+                        <img key={index} src={logo} alt="" className="w-6 object-contain" />
+                    ))}
                 </div>
             </div>
         </div>
+
     )
 }
 
