@@ -39,7 +39,7 @@ const Navbar = () => {
             {/* main nav */}
             <main className='w-full flex flex-col'>
                 <div className='flex justify-between items-center px-5 my-4 sm:px-0'>
-                    <Menu className='block sm:hidden' onClick={() => setAside(!aside)} />
+                    <Menu className='block text-[hsl(var(--accent-color))] sm:hidden' onClick={() => setAside(!aside)} />
                     <div className={`${aside ? "flex justify-end items-center invisible" : 'flex justify-end items-center'}`}>
                         <img src={assets.codLogo1} alt='COD Logo' className='w-10 h-10 sm:w-18 sm:h-18' />
                         <p className='text-sm font-[350]'>CODONNIE</p>

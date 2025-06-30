@@ -14,7 +14,7 @@ const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
                     </div>
                     <div className='flex justify-between items-center gap-5 duration-500'>
                         {expanded ? <FoldHorizontal onClick={() => setExpanded(!expanded)} /> : <UnfoldHorizontal onClick={() => setExpanded(!expanded)} />}
-                        <X onClick={() => setAside(!aside)
+                        <X className='text-[hsl(var(--accent-color))]' onClick={() => setAside(!aside)
                             } />
                     </div>
                 </div>

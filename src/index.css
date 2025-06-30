@@ -49,10 +49,6 @@
     aspect-ratio: 1.3;
     overflow: hidden;
     max-width: 530px;
-    background-image: url("./assets/background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 @utility mobabout {
     width: 100%;

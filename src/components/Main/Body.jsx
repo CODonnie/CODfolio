@@ -7,8 +7,8 @@ import Skills from './Skills'
 
 const Body = () => {
   return (
-    <div className='flex px-[8%] py-10 flex-col gap-5 relative backg'>
-      <div className='flex flex-col backg'>
+    <div className='flex px-[8%] py-1 flex-col gap-5 relative'>
+      <div className='flex flex-col'>
         <Hero />
         <About />
       </div>
