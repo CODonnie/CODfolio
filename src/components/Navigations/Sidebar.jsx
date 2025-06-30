@@ -29,7 +29,7 @@ const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
                 {/* connect btn */}
                 <div className='flex justify-start items-center gap-10 px-4 py-3 w-full mt-auto'>
                     <img src={assets.codround} alt='COD Logo' className='w-8' />
-                    <button className={`transition-all duration-500 ${expanded ? "rounded border-1 border-[hsl(var(--foreground))] px-4 py-1 cursor-pointer" : "hidden"}`}>Let's Connect</button>
+                    <button className={`transition-all duration-500 ${expanded ? "rounded border-1 border-[hsl(var(--foreground))] px-4 py-1 cursor-pointer" : "hidden"}`}>Download C.V</button>
 
                 </div>
             </aside>

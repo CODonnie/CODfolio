@@ -53,19 +53,12 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    -webkit-mask-image: url("./assets/hero.svg");
-    -webkit-mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
 }
 @utility mobabout {
     width: 100%;
-    aspect-ratio: 2.86;
-    overflow: hidden;
+    height: 100%;
+    font-size: 11px;
     max-width: 530px;
-    -webkit-mask-image: url("./assets/about.svg");
-    -webkit-mask-size: 100% 100%;
-    -webkit-mask-position: center;
-    -webkit-mask-repeat: no-repeat;
 }
 @utility mobskills {
     width: 100%;
@@ -105,6 +98,16 @@
     background-position: center;
     background-repeat: no-repeat;
     -webkit-mask-image: url("./assets/exp.svg");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+}
+@utility textEffect {
+    width: 100%;
+    aspect-ratio: 2.7;
+    overflow: hidden;
+    max-width: 530px;
+    -webkit-mask-image: url("./assets/textEffect.svg");
     -webkit-mask-size: 100% 100%;
     -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;
