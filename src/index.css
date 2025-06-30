@@ -61,14 +61,6 @@
     aspect-ratio: 7.1;
     overflow: hidden;
     max-width: 530px;
-    background-image: url("./assets/car.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-mask-image: url("./assets/skills.svg");
-    -webkit-mask-size: 100% 100%;
-    -webkit-mask-position: center;
-    -webkit-mask-repeat: no-repeat;
 }
 @utility mobproject {
     width: 100%;

@@ -18,7 +18,7 @@ const Hero = () => {
                     <p className='text-6xl font-semibold tracking-tighter leading-none textEffect'>DONNIE</p>
                     <p className='px-1'><span style={{fontWeight: 'normal', color: 'white'}}>{text}<Cursor cursorColor="hsl(163, 88%, 76%)" cursorStyle='|'/></span></p>
                 </div>
-                <img src={assets.dee} alt="" className='w-80 z-20 col-span-2' />
+                <img src={assets.dee1} alt="" className='w-80 z-20 col-span-2' />
             </div>
         </div>
     )
