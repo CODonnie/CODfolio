@@ -30,17 +30,11 @@ const Skills = () => {
     ];
 
     return (
-        <div className="flex justify-center items-center overflow-hidden">
-            <div className="relative w-[530px] h-[48px]">
-                <div className="absolute flex gap-4 animate-infinite-scroll">
-                    {/* Duplicate logos for seamless looping */}
-                    {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
-                        <img key={index} src={logo} alt="" className="w-6 object-contain" />
-                    ))}
-                </div>
-            </div>
+        <div className="relative h-[30px] overflow-hidden">
+            {logos.map((logo, index) => (
+                <img key={index} src={logo} alt="" className="w-[30px] h-[30px] object-contain absolute animate-infinite-scroll" style={{ animationDelay: `${((30 / logos.length) * (logos.length - (index + 1))) * -1}s`, top: 0,left: '100%'}} />
+            ))}
         </div>
-
     )
 }
 

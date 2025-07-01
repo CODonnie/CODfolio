@@ -3,17 +3,15 @@
 @import "tailwindcss";
 
 @theme {
-    --animate-infinite-scroll: infinite-scroll 10s linear infinite;
+    --animate-infinite-scroll: infinite-scroll 30s linear infinite;
 }
 
 @keyframes infinite-scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
+    to {
+        left: -700px;
     }
 }
+
 
 @layer base {
     :root {
@@ -46,6 +44,7 @@
 @utility shade {
     @apply shadow-[0px_0_12px_rgba(173,255,226,0.5)]
 }
+
 
 @utility backg {
     width: 100%;
