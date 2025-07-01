@@ -37,7 +37,7 @@ const Navbar = () => {
             </aside>
 
             {/* main nav */}
-            <main className='w-full flex flex-col'>
+            <main className='fixed top-0 left-0 w-full flex flex-col'>
                 <div className='flex justify-between items-center px-5 my-4 sm:px-0'>
                     <Menu className='block text-[hsl(var(--accent-color))] sm:hidden' onClick={() => setAside(!aside)} />
                     <div className={`${aside ? "flex justify-end items-center invisible" : 'flex justify-end items-center'}`}>

@@ -11,7 +11,7 @@ const Hero = () => {
     });
 
     return (
-        <div className='flex justify-center items-center w-full'>
+        <div className='flex justify-center items-center w-full pt-13'>
             <div className="mobhero relative z-10 grid grid-cols-3 justify-center items-center">
                 <div className='flex flex-col justify-center items-start absolute top-[16%] right-[11%] z-0'>
                     <p className='px-1'>Hi, I'm</p>
