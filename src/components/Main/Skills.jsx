@@ -30,7 +30,7 @@ const Skills = () => {
     ];
 
     return (
-        <div className='flex flex-col gap-4 mb-2'>
+        <div className='flex flex-col gap-4 mb-4'>
             <p className='text-xl flex justify-end'>Stack</p>
             <div className="relative h-[30px] overflow-hidden" style={{ maskImage: 'linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0))' }}>
                 {logos.map((logo, index) => (
