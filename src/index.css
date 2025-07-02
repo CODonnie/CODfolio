@@ -103,11 +103,11 @@
     -webkit-mask-repeat: no-repeat;
 }
 @utility textEffect {
-    width: 100%;
-    aspect-ratio: 2.7;
+    width: 165px;
+    aspect-ratio: 2.8;
     overflow: hidden;
     max-width: 530px;
-    -webkit-mask-image: url("./assets/textEffect.svg");
+    -webkit-mask-image: url("./assets/typeffect.svg");
     -webkit-mask-size: 100% 100%;
     -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;

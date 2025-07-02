@@ -11,15 +11,21 @@ const Hero = () => {
     });
 
     return (
-        <div className='flex justify-center items-center w-full pt-13'>
-            <div className="mobhero relative z-10 grid grid-cols-3 justify-center items-center">
-                <div className='flex flex-col justify-center items-start absolute top-[16%] right-[11%] z-0'>
-                    <p className='px-1'>Hi, I'm</p>
-                    <p className='text-6xl font-semibold tracking-tighter leading-none textEffect'>DONNIE</p>
-                    <p className='px-1'><span style={{fontWeight: 'normal', color: 'white'}}>{text}<Cursor cursorColor="hsl(163, 88%, 76%)" cursorStyle='|'/></span></p>
+        <div className='w-full pt-13'>
+            <div className="relative grid grid-cols-3">
+                <img src={assets.dee1} alt="" className="w-80 col-span-2 col-start-1 z-20 row-start-1 row-span-1"/>
+                <div className="col-start-2 col-span-2 z-10 flex flex-col justify-center absolute top-0 left-0 h-full w-full px-5 ml-2">
+                    <p className="px-1">Hi, I'm</p>
+                    <p className="text-6xl font-semibold tracking-tighter textEffect">DONNIE</p>
+                    <p className="px-1 mb-17 flex justify-center">
+                        <span style={{ fontWeight: 'normal', color: 'white' }}>
+                            {text}
+                            <Cursor cursorColor="hsl(163, 88%, 76%)" cursorStyle="|" />
+                        </span>
+                    </p>
                 </div>
-                <img src={assets.dee1} alt="" className='w-80 z-20 col-span-2' />
             </div>
+
         </div>
     )
 }
