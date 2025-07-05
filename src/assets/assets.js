@@ -25,6 +25,7 @@ import redis from "./png/redis.png";
 import sass from "./png/sass.png";
 import tailwind from "./png/tailwind.png";
 import ts from "./png/ts.png";
+import car from "./car.jpg";
 
 export const assets = {
   codLogo1,
@@ -58,6 +59,7 @@ export const assets = {
 
 export const project = [
   {
+		id: "1",
     title: "Streamline",
     type: "development",
     subType: "front-end",
@@ -65,7 +67,7 @@ export const project = [
       "A full-featured streaming web app with user authentication, category-based filtering, and responsive layout.",
     info: "netflix-clone",
     stack: ["React", "Firebase", "TMDB API", "Tailwind CSS"],
-    image: "/images/netflix-clone.jpg",
+    image: car,
     liveUrl: "https://netflix-clone.vercel.app",
     repoUrl: "https://github.com/CODonnie/netflix-clone",
     tags: ["frontend", "auth", "api"],
@@ -75,6 +77,7 @@ export const project = [
     endDate: "02/2025",
   },
   {
+		id: "2",
     title: "Jabb",
     type: "development",
     subType: "backend",
@@ -82,7 +85,7 @@ export const project = [
       "A job board API featuring RBAC, tag filtering, and full CRUD functionality for jobs.",
     info: "job-api",
     stack: ["TypeScript", "Express", "MongoDB", "JWT"],
-    image: "/images/jabb-api.jpg",
+    image: car,
     liveUrl: "",
     repoUrl: "https://github.com/CODonnie/jabb-api",
     tags: ["backend", "RBAC", "API"],
@@ -92,6 +95,7 @@ export const project = [
     endDate: "01/2025",
   },
   {
+		id: "3",
     title: "Elevate",
     type: "design",
     subType: "graphics design",
@@ -99,7 +103,7 @@ export const project = [
       "A flyer design focused on empowering African SMEs through bold, clear messaging and visuals.",
     info: "sme-flyer",
     stack: ["Photoshop", "Illustrator"],
-    image: "/images/sme-flyer.jpg",
+    image: car,
     liveUrl: "",
     repoUrl: "",
     tags: ["flyer", "branding"],
@@ -109,6 +113,7 @@ export const project = [
     endDate: "08/2024",
   },
   {
+		id: "4",
     title: "Transferly",
     type: "development",
     subType: "backend",
@@ -116,7 +121,7 @@ export const project = [
       "A file-sharing API with link generation, expiration, file versioning, and analytics tracking.",
     info: "wetransfer-clone",
     stack: ["Express", "TypeScript", "MongoDB"],
-    image: "/images/wetransfer-clone.png",
+    image: car,
     liveUrl: "",
     repoUrl: "https://github.com/CODonnie/wetransfer-api",
     tags: ["backend", "file-sharing", "REST"],
@@ -126,6 +131,7 @@ export const project = [
     endDate: "nil",
   },
   {
+		id: "5",
     title: "Flexfolio",
     type: "development",
     subType: "full-stack",
@@ -133,7 +139,7 @@ export const project = [
       "A dynamic portfolio site with CMS-like dashboard to manage projects and update content live.",
     info: "portfolio-cms",
     stack: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-    image: "/images/flexfolio.jpg",
+    image: car,
     liveUrl: "",
     repoUrl: "",
     tags: ["full-stack", "portfolio"],
@@ -143,6 +149,7 @@ export const project = [
     endDate: "nil",
   },
   {
+		id: "6",
     title: "Budgeto",
     type: "development",
     subType: "full-stack",
@@ -150,7 +157,7 @@ export const project = [
       "A personal finance tracker with category budgets, spending reports, and goal setting.",
     info: "budget-app",
     stack: ["React", "Node.js", "Express", "MongoDB"],
-    image: "/images/budgeto.jpg",
+    image: car,
     liveUrl: "",
     repoUrl: "",
     tags: ["full-stack", "finance"],
@@ -160,6 +167,7 @@ export const project = [
     endDate: "nil",
   },
   {
+		id: "7",
     title: "Insightly",
     type: "design",
     subType: "product design",
@@ -167,7 +175,7 @@ export const project = [
       "UI/UX design for a data dashboard product, focusing on clarity, structure, and usability.",
     info: "dashboard-ui",
     stack: ["Figma"],
-    image: "/images/insightly.jpg",
+    image: car,
     liveUrl: "",
     repoUrl: "",
     tags: ["dashboard", "uiux"],
@@ -177,6 +185,7 @@ export const project = [
     endDate: "04/2024",
   },
   {
+		id: "8",
     title: "Shortly",
     type: "development",
     subType: "backend",
@@ -184,7 +193,7 @@ export const project = [
       "A URL shortener API with analytics, QR code generation, and redirection tracking.",
     info: "shortener-api",
     stack: ["Express", "TypeScript", "MongoDB"],
-    image: "/images/shortly.jpg",
+    image: car,
     liveUrl: "",
     repoUrl: "https://github.com/CODonnie/url-shortener-api",
     tags: ["backend", "tools"],
@@ -194,6 +203,7 @@ export const project = [
     endDate: "05/2025",
   },
   {
+		id: "9",
     title: "Clarity",
     type: "design",
     subType: "product design",
@@ -201,7 +211,7 @@ export const project = [
       "A clean, mobile-first UI kit for productivity apps with light/dark themes and reusable components.",
     info: "ui-kit",
     stack: ["Figma"],
-    image: "/images/clarity.jpg",
+    image: car,
     liveUrl: "",
     repoUrl: "",
     tags: ["uiux", "mobile"],
@@ -211,6 +221,7 @@ export const project = [
     endDate: "nil",
   },
   {
+		id: '10',
     title: "Aurora",
     type: "design",
     subType: "graphics design",
@@ -218,7 +229,7 @@ export const project = [
       "Brand identity and social media kit design for a fashion label targeting Gen Z.",
     info: "brand-kit",
     stack: ["Illustrator", "Photoshop", "Canva"],
-    image: "/images/aurora.jpg",
+    image: car,
     liveUrl: "",
     repoUrl: "",
     tags: ["branding", "social"],
