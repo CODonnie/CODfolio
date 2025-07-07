@@ -29,7 +29,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-4 mb-5">
+    <div id="skills" className="scroll-mt-20 flex flex-col gap-4 mb-5">
       <p className="text-xl flex justify-end">Stack</p>
       <div
         className="relative h-[30px] overflow-hidden"

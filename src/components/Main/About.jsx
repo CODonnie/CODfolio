@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="flex justify-center items-center w-full relative mb-2">
+    <div id="about" className="scroll-mt-20 flex justify-center items-center w-full relative mb-2">
       {/* main div */}
       <div className="mobabout z-10 flex flex-col gap-2">
         <h2 className="text-xl ">About</h2>

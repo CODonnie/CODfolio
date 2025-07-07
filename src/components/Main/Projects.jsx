@@ -1,24 +1,46 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ChevronRight, FunnelX } from "lucide-react";
 import { AppContext } from "../../context/AppContext";
+import { updateUrl } from "../../utils/urlHelper";
 
 const Projects = () => {
   const [type, setType] = useState("");
   const [subType, setSubType] = useState("");
-	const { project, setShowProject } = useContext(AppContext);
+  const { project, setShowProject } = useContext(AppContext);
 
   const changeType = (t) => {
     setType(t);
     setSubType("");
+    updateUrl(t, "");
   };
+
+  const changeSubType = (sub) => {
+    setSubType(sub);
+    updateUrl(type, sub);
+  };
+
+  const openProject = (id) => {
+    updateUrl(type, subType, id);
+    setShowProject(id);
+  };
+
   const highlight = (opt) => {
     return subType === opt
       ? "text-[hsl(var(--accent-color))] font-semibold"
       : "text-[12px]";
   };
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlType = params.get("type");
+    const urlSubType = params.get("subType");
+
+    if (urlType) setType(urlType);
+    if (urlSubType) setSubType(urlSubType);
+  }, []);
+
   return (
-    <div className="flex flex-col gap-2">
+    <div id="projects" className="scroll-mt-20 flex flex-col gap-2">
       <p className="text-xl">Projects</p>
 
       {/* Filters */}
@@ -39,23 +61,23 @@ const Projects = () => {
           <div className="text-[12px] flex gap-4">
             <button
               className={highlight("full-stack")}
-              onClick={() => setSubType("full-stack")}
+              onClick={() => changeSubType("full-stack")}
             >
               Full-stack
             </button>
             <button
               className={highlight("front-end")}
-              onClick={() => setSubType("front-end")}
+              onClick={() => changeSubType("front-end")}
             >
               Frontend
             </button>
             <button
               className={highlight("backend")}
-              onClick={() => setSubType("backend")}
+              onClick={() => changeSubType("backend")}
             >
               Backend
             </button>
-            <button className={highlight("")} onClick={() => setSubType("")}>
+            <button className={highlight("")} onClick={() => changeSubType("")}>
               all
             </button>
           </div>
@@ -85,17 +107,17 @@ const Projects = () => {
           <div className="text-[12px] flex gap-4">
             <button
               className={highlight("graphics design")}
-              onClick={() => setSubType("graphics design")}
+              onClick={() => changeSubType("graphics design")}
             >
               Graphics Design
             </button>
             <button
               className={highlight("product design")}
-              onClick={() => setSubType("product design")}
+              onClick={() => changeSubType("product design")}
             >
               Product Design
             </button>
-            <button className={highlight("")} onClick={() => setSubType("")}>
+            <button className={highlight("")} onClick={() => changeSubType("")}>
               all
             </button>
           </div>
@@ -120,7 +142,7 @@ const Projects = () => {
               <p>{proj.info}</p>
               <p>{proj.status}</p>
               <div className="hover:bg-[hsl(var(--accent-color))] hover:text-[hsl(var(--background))] h-[100%] flex items-center rounded-r-lg">
-                <ChevronRight size={11} onClick={() => setShowProject(proj.id)} />
+                <ChevronRight size={11} onClick={() => openProject(proj.id)} />
               </div>
             </div>
           ))}

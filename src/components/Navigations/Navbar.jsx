@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import {
   Menu,
@@ -9,25 +8,28 @@ import {
   Hourglass,
   Phone,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Sidebar from "./Sidebar";
 import { SidebarItem } from "./Sidebar";
+import { AppContext } from "../../context/AppContext";
 
 const Navbar = () => {
   const [aside, setAside] = useState(false);
   const [expanded, setExpanded] = useState(true);
-	const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setScrolled(window.scrollY > 10);
-		};
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+  const { setShowProject } = useContext(AppContext);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const nav = [
-    { name: "Home", path: "#", icon: <House /> },
+    { name: "Home", path: "#home", icon: <House /> },
     { name: "About", path: "#about", icon: <CircleUser /> },
     { name: "Skills", path: "#skills", icon: <Wrench /> },
     { name: "Projects", path: "#projects", icon: <FolderOpenDot /> },
@@ -59,8 +61,10 @@ const Navbar = () => {
                   expanded={expanded}
                   aside={aside}
                   setAside={setAside}
+                  links={links}
                   name={links.name}
                   icon={links.icon}
+                  setShowProject={setShowProject}
                 />
               </a>
             );
@@ -69,7 +73,13 @@ const Navbar = () => {
       </aside>
 
       {/* main nav */}
-      <main className={`fixed z-10 top-0 left-0 w-full flex flex-col transition-color duration-300 ${scrolled ? "backdrop-blur-lg bg-[hsl(var(--background))]" : "bg-transparent"}`}>
+      <main
+        className={`fixed z-10 top-0 left-0 w-full flex flex-col transition-color duration-300 ${
+          scrolled
+            ? "backdrop-blur-lg bg-[hsl(var(--background))]"
+            : "bg-transparent"
+        }`}
+      >
         <div className="flex justify-between items-center px-5 my-4 sm:px-0">
           <Menu
             className="block text-[hsl(var(--accent-color))] sm:hidden"
@@ -95,17 +105,26 @@ const Navbar = () => {
           <nav className="flex gap-10 text-base">
             {nav.map((links) => {
               return (
-                <NavLink
+                <a
+                  href={links.path}
                   key={links.path}
-                  to={links.path}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-[hsl(var(--accent-color))]"
-                      : "text-[hsl(var(--foreground))] hover:scale-110 transition"
-                  }
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const url = new URL(window.location);
+                    url.searchParams.delete("projectId");
+                    url.searchParams.delete("subType");
+                    url.searchParams.delete("type");
+                    window.history.replaceState({}, "", url);
+                    setShowProject(null);
+
+                    //manual scrolling
+                    const target = document.querySelector(links.path);
+                    if (target) target.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="text-[hsl(var(--foreground))] hover:scale-110 transition"
                 >
                   {links.name}
-                </NavLink>
+                </a>
               );
             })}
           </nav>
