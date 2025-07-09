@@ -1,5 +1,9 @@
-import { useContext } from "react";
+import { useContext, useRef, useState, useEffect } from "react";
 import { AppContext } from "../../context/AppContext";
+import { assets } from "../../assets/assets";
+import { normalizeKey } from "../../utils/normalize";
+import { Github, Globe } from 'lucide-react';
+
 
 const ProjectDisplay = () => {
   const { project, showProject } = useContext(AppContext);
@@ -7,8 +11,26 @@ const ProjectDisplay = () => {
 
   if (!pd) return null;
 
+  const scrollRef = useRef(null);
+  const [scrollP, setScrollP] = useState(false);
+
+  useEffect(() => {
+    const div = scrollRef.current;
+    if (!div) return;
+
+    const handleScroll = () => {
+      setScrollP(div.scrollTop > 10);
+    };
+
+    div.addEventListener("scroll", handleScroll);
+    return () => div.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="w-[100%] h-[95%] mt-5 bg-[hsl(var(--background))] flex flex-col gap-4 overflow-auto">
+    <div
+      ref={scrollRef}
+      className="w-[100%] h-[95%] bg-[hsl(var(--background))] flex flex-col gap-3 overflow-auto"
+    >
       {/* thumbnail */}
       <div className="relative w-[100%]">
         <img
@@ -16,7 +38,11 @@ const ProjectDisplay = () => {
           alt={pd.thumbnail}
           className="w-[100%] object-cover"
         />
-        <div className="hover:animate-div-cover bg-[hsl(var(--foreground)/0.7)] flex flex-col justify-center items-center w-[100%] h-[100%] absolute top-0">
+        <div
+          className={`bg-[hsl(var(--foreground)/0.7)] flex flex-col justify-center items-center w-[100%] h-[100%] absolute top-0 ${
+            scrollP ? "animate-div-cover" : "animate-div-remove coverlid"
+          }`}
+        >
           <p className="text-xl font-semibold text-[hsl(var(--background))]">
             {pd.title}
           </p>
@@ -26,7 +52,9 @@ const ProjectDisplay = () => {
       {/* description */}
       <div
         className={`${
-          pd.description ? "flex flex-col gap-2 px-4" : "hidden"
+          pd.description
+            ? "flex flex-col gap-2 p-4 m-2 border border-gray-500 rounded-lg bg-black"
+            : "hidden"
         }`}
       >
         <p className="font-semibold">Description</p>
@@ -36,10 +64,72 @@ const ProjectDisplay = () => {
       <div className={`${pd.image.length ? "flex flex-col" : "hidden"}`}>
         {pd.image.map((image, i) => (
           <div key={i}>
-            <img src={image} alt={image} className="w-[100%] object-cover"/>
+            <img src={image} alt={image} className="w-[100%] object-cover" />
           </div>
         ))}
       </div>
+      {/* stack */}
+      <div
+        className={`${
+          pd.stack.length > 0
+            ? "flex flex-col gap-2 p-4 m-2 border border-gray-500 rounded-lg bg-black"
+            : "hidden"
+        }`}
+      >
+        <p className="font-semibold">Stack</p>
+        <div className="flex items-center gap-4">
+          {pd.stack.map((tech, i) => {
+            const key = normalizeKey(tech);
+            const icon = assets[key];
+
+            return icon ? (
+              <img
+                key={i}
+                src={icon}
+                alt={tech}
+                className="w-8 object-contain"
+              />
+            ) : (
+              <span key={i} className="">
+                {tech}
+              </span>
+            );
+          })}
+        </div>
+      </div>
+      <div className="grid grid-cols-2">
+      	{/* status */}
+        <div className="flex flex-col gap-2 p-4 m-2 border border-gray-500 rounded-lg bg-black">
+          <p className="font-semibold">Status</p>
+          <p className="text-[12px]">{pd.status}</p>
+        </div>
+        {/* date */}
+        <div
+          className={`${
+            pd.status === "completed"
+              ? "flex flex-col gap-2 p-4 m-2 border border-gray-500 rounded-lg bg-black"
+              : "hidden"
+          }`}
+        >
+          <p className="font-semibold">Concluded on</p>
+          <p className="text-[12px]">{pd.endDate}</p>
+        </div>
+      </div>
+			{/* links */}
+			<div className="flex flex-col gap-2 p-4 m-2 border border-gray-500 rounded-lg bg-black">
+          <p className="font-semibold">Links</p>
+          	<div className={`${pd.liveUrl ? "flex gap-2 items-center" : "hidden"}`}>
+							<Globe size={12}/>
+							<a href={pd.liveUrl} className="text-[12px]">{pd.liveUrl}</a>
+						</div>
+
+						<div className={`${pd.liveUrl ? "flex gap-2 items-center" : "hidden"}`}>
+							<Github size={12}/>
+							<a href={pd.repoUrl} className="text-[12px]">{pd.repoUrl}</a>
+						</div>
+
+        </div>
+
     </div>
   );
 };

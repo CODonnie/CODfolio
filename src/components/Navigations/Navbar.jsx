@@ -8,7 +8,7 @@ import {
   Hourglass,
   Phone,
 } from "lucide-react";
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import Sidebar from "./Sidebar";
 import { SidebarItem } from "./Sidebar";
 import { AppContext } from "../../context/AppContext";
@@ -16,17 +16,8 @@ import { AppContext } from "../../context/AppContext";
 const Navbar = () => {
   const [aside, setAside] = useState(false);
   const [expanded, setExpanded] = useState(true);
-  const [scrolled, setScrolled] = useState(false);
 
-  const { setShowProject } = useContext(AppContext);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { scrolled, setShowProject } = useContext(AppContext);
 
   const nav = [
     { name: "Home", path: "#home", icon: <House /> },

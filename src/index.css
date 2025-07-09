@@ -4,6 +4,7 @@
 @theme {
     --animate-infinite-scroll: infinite-scroll 30s linear infinite;
 		--animate-div-cover: div-cover .5s linear;
+		--animate-div-remove: div-remove .5s linear;
 }
 
 @keyframes infinite-scroll {
@@ -13,6 +14,17 @@
 }
 
 @keyframes div-cover {
+	0% {
+		width: 100%;
+		clip-path: circle(7% at left top);
+	}
+	100% {
+		width: 100%;
+		clip-path: circle(150% at left top);
+	}
+}
+
+@keyframes div-remove {
 	0% {
 		width: 100%;
 		clip-path: circle(150% at left top);
@@ -52,7 +64,7 @@
     padding: 0;
 }
 
-@utility divcover {
+@utility coverlid {
 	clip-path: circle(7% at left top);
 }
 

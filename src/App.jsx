@@ -36,8 +36,8 @@ const App = () => {
             : "hidden"
         }`}
       >
-        <X
-          className="absolute right-3 top-2"
+        <X size={28}
+          className="absolute right-3 top-5 bg-[hsl(var(--background))] rounded-[100%] p-2 shadow-sm z-10"
           onClick={() => window.history.back()}
         />
         <ProjectDisplay />
