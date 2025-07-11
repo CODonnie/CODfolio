@@ -30,6 +30,16 @@ import lascaux from "./images/lascaux.jpg";
 import osloO from "./images/oslo-opera.jpg";
 import oslo from "./images/oslo.jpg";
 import shangai from "./images/shanghai.jpg";
+import discord from "./contactIcon/discord.png";
+import discordb from "./contactIcon/discord-black.png";
+import x from "./contactIcon/X.png";
+import xb from "./contactIcon/X-black.png";
+import linkedin from "./contactIcon/linkedin.png";
+import linkedinb from "./contactIcon/linkedin-black.png";
+import whatsapp from "./contactIcon/whatsapp.png";
+import whatsappb from "./contactIcon/whatsapp-black.png";
+import githubw from "./contactIcon/github.png";
+import githubb from "./contactIcon/github-black.png";
 
 export const assets = {
   codLogo1,
@@ -61,9 +71,13 @@ export const assets = {
   typescript,
 };
 
+export const contactAssets = {
+  x, xb, whatsapp, whatsappb, githubw, githubb, discord, discordb, linkedin, linkedinb
+};
+
 export const project = [
   {
-		id: "1",
+    id: "1",
     title: "Streamline",
     type: "development",
     subType: "front-end",
@@ -72,7 +86,7 @@ export const project = [
     info: "netflix-clone",
     stack: ["React", "Firebase", "TMDB API", "Tailwind CSS"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "https://netflix-clone.vercel.app",
     repoUrl: "https://github.com/CODonnie/netflix-clone",
     tags: ["frontend", "auth", "api"],
@@ -82,7 +96,7 @@ export const project = [
     endDate: "02/2025",
   },
   {
-		id: "2",
+    id: "2",
     title: "Jabb",
     type: "development",
     subType: "backend",
@@ -91,7 +105,7 @@ export const project = [
     info: "job-api",
     stack: ["TypeScript", "Express", "MongoDB", "JWT"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "",
     repoUrl: "https://github.com/CODonnie/jabb-api",
     tags: ["backend", "RBAC", "API"],
@@ -101,7 +115,7 @@ export const project = [
     endDate: "01/2025",
   },
   {
-		id: "3",
+    id: "3",
     title: "Elevate",
     type: "design",
     subType: "graphics design",
@@ -109,7 +123,7 @@ export const project = [
     info: "sme-flyer",
     stack: ["Photoshop", "Illustrator"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "",
     repoUrl: "",
     tags: ["flyer", "branding"],
@@ -119,7 +133,7 @@ export const project = [
     endDate: "08/2024",
   },
   {
-		id: "4",
+    id: "4",
     title: "Transferly",
     type: "development",
     subType: "backend",
@@ -128,7 +142,7 @@ export const project = [
     info: "wetransfer-clone",
     stack: ["Express", "TypeScript", "MongoDB"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "",
     repoUrl: "https://github.com/CODonnie/wetransfer-api",
     tags: ["backend", "file-sharing", "REST"],
@@ -138,7 +152,7 @@ export const project = [
     endDate: "nil",
   },
   {
-		id: "5",
+    id: "5",
     title: "Flexfolio",
     type: "development",
     subType: "full-stack",
@@ -147,7 +161,7 @@ export const project = [
     info: "portfolio-cms",
     stack: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "",
     repoUrl: "",
     tags: ["full-stack", "portfolio"],
@@ -157,7 +171,7 @@ export const project = [
     endDate: "nil",
   },
   {
-		id: "6",
+    id: "6",
     title: "Budgeto",
     type: "development",
     subType: "full-stack",
@@ -166,7 +180,7 @@ export const project = [
     info: "budget-app",
     stack: ["React", "Node.js", "Express", "MongoDB"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "",
     repoUrl: "",
     tags: ["full-stack", "finance"],
@@ -176,7 +190,7 @@ export const project = [
     endDate: "nil",
   },
   {
-		id: "7",
+    id: "7",
     title: "Insightly",
     type: "design",
     subType: "product design",
@@ -185,7 +199,7 @@ export const project = [
     info: "dashboard-ui",
     stack: ["Figma"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "",
     repoUrl: "",
     tags: ["dashboard", "uiux"],
@@ -195,7 +209,7 @@ export const project = [
     endDate: "04/2024",
   },
   {
-		id: "8",
+    id: "8",
     title: "Shortly",
     type: "development",
     subType: "backend",
@@ -204,7 +218,7 @@ export const project = [
     info: "shortener-api",
     stack: ["Express", "TypeScript", "MongoDB"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "",
     repoUrl: "https://github.com/CODonnie/url-shortener-api",
     tags: ["backend", "tools"],
@@ -214,7 +228,7 @@ export const project = [
     endDate: "05/2025",
   },
   {
-		id: "9",
+    id: "9",
     title: "Clarity",
     type: "design",
     subType: "product design",
@@ -223,7 +237,7 @@ export const project = [
     info: "ui-kit",
     stack: ["Figma"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "",
     repoUrl: "",
     tags: ["uiux", "mobile"],
@@ -233,7 +247,7 @@ export const project = [
     endDate: "nil",
   },
   {
-		id: '10',
+    id: '10',
     title: "Aurora",
     type: "design",
     subType: "graphics design",
@@ -242,7 +256,7 @@ export const project = [
     info: "brand-kit",
     stack: ["Illustrator", "Photoshop", "Canva"],
     thumbnail: car,
-		image: [lascaux, osloO, oslo, shangai],
+    image: [lascaux, osloO, oslo, shangai],
     liveUrl: "",
     repoUrl: "",
     tags: ["branding", "social"],

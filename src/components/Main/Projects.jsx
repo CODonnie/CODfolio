@@ -47,7 +47,7 @@ const Projects = () => {
       <div className="flex relative h-10 w-[100%] justify-around items-center mb-4">
         {type === "development" ? null : (
           <div className="flex z-10 items-center gap-6">
-            <p onClick={() => changeType("development")}>Dev</p>
+            <button onClick={() => changeType("development")}>Dev</button>
             {type === "design" ? (
               <FunnelX
                 size={10}
@@ -93,7 +93,7 @@ const Projects = () => {
         ></div>
         {type === "design" ? null : (
           <div className="flex z-10 items-center gap-6">
-            <p onClick={() => changeType("design")}>Design</p>
+            <button onClick={() => changeType("design")}>Design</button>
             {type === "development" ? (
               <FunnelX
                 size={10}

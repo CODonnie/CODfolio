@@ -37,7 +37,7 @@ const App = () => {
         }`}
       >
         <X size={28}
-          className="absolute right-3 top-5 bg-[hsl(var(--background))] rounded-[100%] p-2 shadow-sm z-10"
+          className="absolute right-3 top-7 bg-[hsl(var(--background))] rounded-[100%] p-2 shadow-sm z-10"
           onClick={() => window.history.back()}
         />
         <ProjectDisplay />
