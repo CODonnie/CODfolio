@@ -31,15 +31,10 @@ import osloO from "./images/oslo-opera.jpg";
 import oslo from "./images/oslo.jpg";
 import shangai from "./images/shanghai.jpg";
 import discord from "./contactIcon/discord.png";
-import discordb from "./contactIcon/discord-black.png";
 import x from "./contactIcon/X.png";
-import xb from "./contactIcon/X-black.png";
 import linkedin from "./contactIcon/linkedin.png";
-import linkedinb from "./contactIcon/linkedin-black.png";
 import whatsapp from "./contactIcon/whatsapp.png";
-import whatsappb from "./contactIcon/whatsapp-black.png";
 import githubw from "./contactIcon/github.png";
-import githubb from "./contactIcon/github-black.png";
 
 export const assets = {
   codLogo1,
@@ -71,10 +66,13 @@ export const assets = {
   typescript,
 };
 
-export const contactAssets = {
-  x, xb, whatsapp, whatsappb, githubw, githubb, discord, discordb, linkedin, linkedinb
-};
-
+export const contactAssets = [
+  { icon: x, value: "donnie@twitter.com"},
+  { icon: discord, value: "donnie@twitter.com"},
+  { icon: linkedin, value: "donnie@twitter.com"},
+  { icon: whatsapp, value: "donnie@twitter.com"},
+  { icon: githubw, value: "donnie@twitter.com"},
+]
 export const project = [
   {
     id: "1",
