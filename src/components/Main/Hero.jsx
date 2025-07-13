@@ -14,7 +14,7 @@ const Hero = () => {
   });
 
   return (
-    <div id="home" className="scroll-mt-20 w-full pt-13 sm:flex sm:justify-center sm:items-center">
+    <div id="home" className="scroll-mt-20 w-full pt-13 sm:pt-5 sm:flex sm:justify-center sm:items-center">
       <div className="relative grid grid-cols-3">
         <img
           src={assets.dee1}

@@ -9,14 +9,14 @@ const ProjectDisplay = () => {
   const pd = project.find((proj) => proj.id === showProject);
 
   if (!pd) return null;
-
+  
   const scrollRef = useRef(null);
   const [scrollP, setScrollP] = useState(false);
-
+  
   useEffect(() => {
     const div = scrollRef.current;
     if (!div) return;
-
+    
     const handleScroll = () => {
       setScrollP(div.scrollTop > 10);
     };
@@ -28,7 +28,7 @@ const ProjectDisplay = () => {
   return (
     <div
       ref={scrollRef}
-      className="w-[100%] h-[95%] bg-[hsl(var(--background))] flex flex-col gap-1 overflow-auto"
+      className="w-[100%] h-[95%] sm:px-[7%] sm:text-2xl bg-[hsl(var(--background))] flex flex-col gap-1 overflow-auto"
     >
       {/* thumbnail */}
       <div className="relative w-[100%]">
@@ -42,7 +42,7 @@ const ProjectDisplay = () => {
             scrollP ? "animate-div-cover" : "animate-div-remove coverlid"
           }`}
         >
-          <p className="text-xl font-semibold text-[hsl(var(--background))]">
+          <p className="text-xl sm:3xl font-semibold text-[hsl(var(--background))]">
             {pd.title}
           </p>
           <p className="italic text-[hsl(var(--background))]">{pd.info}</p>
@@ -57,7 +57,7 @@ const ProjectDisplay = () => {
         }`}
       >
         <p className="font-semibold">Description</p>
-        <p className="text-[12px]">{pd.description}</p>
+        <p className="text-[12px] sm:xl">{pd.description}</p>
       </div>
       {/* Project images */}
       <div className={`${pd.image.length ? "flex flex-col" : "hidden"}`}>
@@ -100,7 +100,7 @@ const ProjectDisplay = () => {
         {/* status */}
         <div className="flex flex-col gap-2 p-4 m-2 shadow-sm rounded-lg bg-[hsl(var(--card-color))]">
           <p className="font-semibold">Status</p>
-          <p className="text-[12px]">{pd.status}</p>
+          <p className="text-[12px] sm:text-xl">{pd.status}</p>
         </div>
         {/* date */}
         <div
@@ -111,7 +111,7 @@ const ProjectDisplay = () => {
           }`}
         >
           <p className="font-semibold">Concluded on</p>
-          <p className="text-[12px]">{pd.endDate}</p>
+          <p className="text-[12px] sm:text-xl">{pd.endDate}</p>
         </div>
       </div>
       {/* links */}
@@ -119,14 +119,14 @@ const ProjectDisplay = () => {
         <p className="font-semibold">Links</p>
         <div className={`${pd.liveUrl ? "flex gap-2 items-center" : "hidden"}`}>
           <Globe size={12} />
-          <a href={pd.liveUrl} className="text-[12px]">
+          <a href={pd.liveUrl} className="text-[12px] sm:text-xl">
             {pd.liveUrl}
           </a>
         </div>
 
         <div className={`${pd.liveUrl ? "flex gap-2 items-center" : "hidden"}`}>
           <Github size={12} />
-          <a href={pd.repoUrl} className="text-[12px]">
+          <a href={pd.repoUrl} className="text-[12px] sm:text-xl">
             {pd.repoUrl}
           </a>
         </div>

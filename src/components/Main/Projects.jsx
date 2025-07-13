@@ -46,11 +46,11 @@ const Projects = () => {
       {/* Filters */}
       <div className="flex relative h-10 w-[100%] justify-around items-center mb-4">
         {type === "development" ? null : (
-          <div className="flex z-10 items-center gap-6">
+          <div className="flex z-10 items-center gap-6 sm:gap-20">
             <button onClick={() => changeType("development")}>Dev</button>
             {type === "design" ? (
               <FunnelX
-                size={10}
+                className="w-[10] sm:w-[13]"
                 color={"hsl(var(--accent-color))"}
                 onClick={() => changeType("")}
               />
@@ -58,7 +58,7 @@ const Projects = () => {
           </div>
         )}
         {type === "development" ? (
-          <div className="text-[12px] flex gap-4">
+          <div className="text-[12px] flex gap-4 sm:text-lg sm:gap-15">
             <button
               className={highlight("full-stack")}
               onClick={() => changeSubType("full-stack")}
@@ -85,18 +85,18 @@ const Projects = () => {
         <div
           className={`${
             type == "design"
-              ? "z-0 absolute left-0 w-[25%] h-10 border-b-1 border-r-1"
+              ? "z-0 absolute left-0 w-[25%] sm:w-[40%] h-10 border-b-1 border-r-1"
               : type === "development"
-              ? "z-0 absolute right-0 w-[30%] h-10 border-b-1 border-l-1"
+              ? "z-0 absolute right-0 w-[30%] sm:w-[45%] h-10 border-b-1 border-l-1"
               : "hidden"
           }`}
         ></div>
         {type === "design" ? null : (
-          <div className="flex z-10 items-center gap-6">
+          <div className="flex z-10 items-center gap-6 sm:gap-20">
             <button onClick={() => changeType("design")}>Design</button>
             {type === "development" ? (
               <FunnelX
-                size={10}
+                className="w-[10] sm:w-[13]"
                 color={"hsl(var(--accent-color))"}
                 onClick={() => changeType("")}
               />
@@ -104,7 +104,7 @@ const Projects = () => {
           </div>
         )}
         {type === "design" ? (
-          <div className="text-[12px] flex gap-4">
+          <div className="text-[12px] flex gap-4 sm:text-lg sm:gap-15">
             <button
               className={highlight("graphics design")}
               onClick={() => changeSubType("graphics design")}
@@ -135,14 +135,14 @@ const Projects = () => {
           .map((proj, index) => (
             <div
               key={index}
-              className="mb-2 pb-1 border-b-1 border-b-gray-700 grid grid-cols-[55px_1fr_1fr_1fr_14px] justify-start items-center text-[8px] thin text-gray h-[100%]"
+              className="mb-2 pb-1 border-b-1 border-b-gray-700 grid grid-cols-[60px_1fr_1fr_1fr_14px] sm:grid-cols-[0.3fr_1fr_1fr_1fr_14px] justify-start items-center text-sm sm:text-xl thin text-gray h-[100%]"
             >
-              <p>{proj.endDate}</p>
-              <p className="text-sm font-semibold">{proj.title}</p>
-              <p>{proj.info}</p>
-              <p>{proj.status}</p>
+              <p className="text-[10px]">{proj.endDate}</p>
+              <p>{proj.title}</p>
+              <p className="text-[10px]">{proj.info}</p>
+              <p className="text-[10px]">{proj.status}</p>
               <div className="hover:bg-[hsl(var(--accent-color))] hover:text-[hsl(var(--background))] h-[100%] flex items-center rounded-r-lg">
-                <ChevronRight size={11} onClick={() => openProject(proj.id)} />
+                <ChevronRight className="w-11 h-11 sm:w-13 sm:h-13" onClick={() => openProject(proj.id)} />
               </div>
             </div>
           ))}

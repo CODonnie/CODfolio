@@ -32,7 +32,7 @@ const App = () => {
       <div
         className={`${
           showProject
-            ? "fixed z-30 top-18 backdrop-blur-md bg-[hsl(var(--background))] shadow-lg w-[100%] h-[90%] flex justify-center items-center"
+            ? "fixed z-30 top-18 backdrop-blur-md bg-[hsl(var(--background))] shadow-lg w-[100%] h-[90%] flex justify-center items-center sm:h-full sm:top-0"
             : "hidden"
         }`}
       >
