@@ -39,9 +39,20 @@
 @layer base {
     :root {
         --background: 120 8% 5%;
-        --foreground: 208 0% 89%;
-        --accent-color: 163 88% 76%;
+        --foreground: 208 0% 92%;
+        --accent-color: 174 72% 56%;
+
+				--card-color: 120 30% 2%;
+
     }
+		.light {
+        --foreground: 120 8% 5%;
+        --background: 208 0% 92%;
+        --accent-color: 174 72% 56%;
+
+				--card-color: 208 0% 98%;
+
+		}
 
     *,
     ::before,
@@ -54,7 +65,7 @@
         @apply scroll-smooth;
     }
     body {
-        @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-light text-sm antialiased tracking-widest;
+        @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-normal text-sm antialiased tracking-widest;
     }
 }
 
@@ -101,34 +112,7 @@
     overflow: hidden;
     max-width: 530px;
 }
-@utility mobproject {
-    width: 100%;
-    aspect-ratio: 1.8;
-    overflow: hidden;
-    max-width: 530px;
-    background-image: url("./assets/car.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-mask-image: url("./assets/project.svg");
-    -webkit-mask-size: 100% 100%;
-    -webkit-mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-}
-@utility mobexp {
-    width: 100%;
-    aspect-ratio: 2;
-    overflow: hidden;
-    max-width: 530px;
-    background-image: url("./assets/car.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-mask-image: url("./assets/exp.svg");
-    -webkit-mask-size: 100% 100%;
-    -webkit-mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-}
+
 @utility textEffect {
     width: 165px;
     aspect-ratio: 2.8;

@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { assets } from "../../assets/assets";
-import { UnfoldHorizontal, FoldHorizontal, X } from "lucide-react";
+import { UnfoldHorizontal, FoldHorizontal, FileDown } from "lucide-react";
+import { AppContext } from "../../context/AppContext";
 
-const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
+const Sidebar = ({ children, expanded, setExpanded }) => {
+  const { isDarkMode } = useContext(AppContext);
   return (
     <div>
       <aside
@@ -12,20 +15,30 @@ const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
         }`}
       >
         <div
-          className={`overflow-hidden transition-all duration-500 ${
+          className={`h-[10%] overflow-hidden transition-all duration-300 ${
             expanded
               ? "flex items-center gap-9 px-3 py-4 w-full"
-              : "flex flex-start justify-between px-3 py-4 w-auto"
+              : "flex items-center justify-center px-3 py-4 w-auto"
           }`}
         >
           <div className="flex items-center">
-            <img
-              src={assets.codLogo1}
-              alt="COD Logo"
-              className={`transition-all duration-500 ${
-                expanded ? "w-7" : "w-0"
-              } duration-500`}
-            />
+            {isDarkMode ? (
+              <img
+                src={assets.codlogo2}
+                alt="COD Logo"
+                className={`transition-all duration-500 ${
+                  expanded ? "w-7" : "w-0"
+                } duration-500`}
+              />
+            ) : (
+              <img
+                src={assets.codLogo1}
+                alt="COD Logo"
+                className={`transition-all duration-500 ${
+                  expanded ? "w-7" : "w-0"
+                } duration-500`}
+              />
+            )}
             <p
               className={`transition-all duration-500 ${
                 expanded ? "text-sm font-[350]" : "hidden"
@@ -34,35 +47,46 @@ const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
               CODONNIE
             </p>
           </div>
-          <div className="flex justify-between items-center gap-5 duration-500">
+          <div className="">
             {expanded ? (
               <FoldHorizontal onClick={() => setExpanded(!expanded)} />
             ) : (
               <UnfoldHorizontal onClick={() => setExpanded(!expanded)} />
             )}
-            <X
-              className="text-[hsl(var(--accent-color))]"
-              onClick={() => setAside(!aside)}
-            />
           </div>
         </div>
 
         {/* navigations */}
         <nav>
-          <ul className="flex flex-col gap-7 px-4 py-3 ">{children}</ul>
+          <ul
+            className={`${
+              expanded
+                ? "flex flex-col gap-7 px-4 py-3 duration-500"
+                : "flex flex-col items-center gap-7 px-4 py-3 duration-500"
+            }`}
+          >
+            {children}
+          </ul>
         </nav>
 
         {/* connect btn */}
-        <div className="flex justify-start items-center gap-10 px-4 py-3 w-full mt-auto">
-          <img src={assets.codround} alt="COD Logo" className="w-8" />
+        <div
+          className={`px-4 py-3 w-full mt-auto ${
+            expanded
+              ? "flex justify-start gap-4 items-center"
+              : "grid grid-rows-2 gap-4"
+          }`}
+        >
+          <img
+            src={assets.codround}
+            alt="COD Logo"
+            className={`${expanded ? "w-8 h-8" : "w-8 h-8 row-start-2"}`}
+          />
           <button
-            className={`transition-all duration-500 ${
-              expanded
-                ? "rounded border-1 border-[hsl(var(--foreground))] px-4 py-1 cursor-pointer"
-                : "hidden"
-            }`}
+            className={`flex gap-2 items-center px-1 py-1 cursor-pointer`}
           >
-            Download C.V
+            <FileDown size={24} />
+            <span className={`${expanded ? "block" : "hidden"}`}>Résumé</span>
           </button>
         </div>
       </aside>
@@ -72,7 +96,7 @@ const Sidebar = ({ children, aside, setAside, expanded, setExpanded }) => {
 export function SidebarItem({
   name,
   icon,
-	links,
+  links,
   expanded,
   setAside,
   aside,
@@ -81,7 +105,7 @@ export function SidebarItem({
   if (expanded) {
     return (
       <li
-        className="flex gap-10 items-center"
+        className="flex gap-4 items-center"
         onClick={(e) => {
           e.preventDefault();
           const url = new URL(window.location);
@@ -103,7 +127,7 @@ export function SidebarItem({
   } else {
     return (
       <li
-        className="flex gap-10 items-center"
+        className="flex items-center"
         onClick={(e) => {
           e.preventDefault();
           const url = new URL(window.location);

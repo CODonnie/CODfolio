@@ -35,6 +35,12 @@ import x from "./contactIcon/X.png";
 import linkedin from "./contactIcon/linkedin.png";
 import whatsapp from "./contactIcon/whatsapp.png";
 import githubw from "./contactIcon/github.png";
+import discordb from "./contactIcon/discord-black.png";
+import xb from "./contactIcon/X-black.png";
+import linkedinb from "./contactIcon/linkedin-black.png";
+import whatsappb from "./contactIcon/whatsapp-black.png";
+import githubb from "./contactIcon/github-black.png";
+
 
 export const assets = {
   codLogo1,
@@ -66,13 +72,22 @@ export const assets = {
   typescript,
 };
 
-export const contactAssets = [
+export const lightAssets = [
   { icon: x, value: "donnie@twitter.com"},
   { icon: discord, value: "donnie@twitter.com"},
   { icon: linkedin, value: "donnie@twitter.com"},
   { icon: whatsapp, value: "donnie@twitter.com"},
   { icon: githubw, value: "donnie@twitter.com"},
-]
+];
+
+export const darkAssets = [
+  { icon: xb, value: "donnie@twitter.com"},
+  { icon: discordb, value: "donnie@twitter.com"},
+  { icon: linkedinb, value: "donnie@twitter.com"},
+  { icon: whatsappb, value: "donnie@twitter.com"},
+  { icon: githubb, value: "donnie@twitter.com"},
+];
+
 export const project = [
   {
     id: "1",

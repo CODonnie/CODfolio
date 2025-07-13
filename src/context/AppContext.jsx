@@ -6,6 +6,7 @@ export const AppContext = createContext(null);
 export const AppProvider = ({ children }) => {
 	const [showProject, setShowProject] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+	const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +22,8 @@ export const AppProvider = ({ children }) => {
 		setShowProject,
 		project,
 		scrolled,
+		isDarkMode,
+		setIsDarkMode
 	};
 
 	return (

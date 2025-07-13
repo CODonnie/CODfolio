@@ -14,7 +14,7 @@ const Hero = () => {
   });
 
   return (
-    <div id="home" className="scroll-mt-20 w-full pt-13">
+    <div id="home" className="scroll-mt-20 w-full pt-13 sm:flex sm:justify-center sm:items-center">
       <div className="relative grid grid-cols-3">
         <img
           src={assets.dee1}
@@ -26,10 +26,10 @@ const Hero = () => {
           <p className="text-6xl font-semibold tracking-tighter textEffect">
             DONNIE
           </p>
-          <p className="px-1 mb-17 flex justify-center">
-            <span style={{ fontWeight: "normal", color: "white" }}>
+          <p className="px-1 mb-17 sm:mr-12 flex justify-center">
+            <span className="text-[hsl(var(--foreground))]">
               {text}
-              <Cursor cursorColor="hsl(163, 88%, 76%)" cursorStyle="_" />
+              <Cursor cursorColor="hsl(var(--accent-color))" cursorStyle="_" />
             </span>
           </p>
         </div>

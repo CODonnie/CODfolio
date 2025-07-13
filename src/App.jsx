@@ -25,7 +25,7 @@ const App = () => {
   }, [showProject]);
 
   return (
-    <div className="backg relative min-h-screen">
+    <div className="relative min-h-screen">
       {/* Navbar */}
       <Navbar />
       {/* Body */}
@@ -43,7 +43,6 @@ const App = () => {
         <ProjectDisplay />
       </div>
       <Body />
-      {/* Footer */}
     </div>
   );
 };
